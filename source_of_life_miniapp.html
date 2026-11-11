@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#070c16">
+<title>SOURCE OF LIFE</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:#070c16;--panel:#0c1424;--panel2:#101c30;--line:#123d4b;--cyan:#12d8e8;--mint:#21e0ad;--muted:#91a2bb;--white:#f4f8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 25%,#102b3b 0,#070c16 48%);color:var(--white);font-family:Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;min-height:100vh;padding-bottom:105px}
+button{font:inherit;color:inherit;cursor:pointer}.top{padding:18px 18px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #142033;background:#080e19dd;position:sticky;top:0;z-index:3;backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#07131c,#102c3b);border:1px solid #1b9bab;display:grid;place-items:center;color:var(--mint);font-weight:900;font-size:22px;box-shadow:0 0 20px #0bd8e633}.brand b{letter-spacing:1px;font-size:15px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:2px}
+.lang{border:1px solid #1c5664;background:#0c1b2b;border-radius:12px;padding:8px 10px;color:#b9f8f4;font-size:12px}
+.wrap{max-width:520px;margin:auto;padding:16px}.user{display:flex;align-items:center;justify-content:space-between;margin:8px 0 18px}.user strong{font-size:14px}.user small{display:block;color:var(--muted);margin-top:3px}.level{font-size:11px;color:var(--cyan);border:1px solid #14627a;border-radius:8px;padding:4px 7px;margin-inline-start:6px}
+.card{background:linear-gradient(150deg,#101d31ee,#080f1bee);border:1px solid #145365;border-radius:26px;padding:18px;box-shadow:inset 0 1px #ffffff0a,0 15px 45px #0005;margin-bottom:16px}
+.pills{display:flex;justify-content:space-between;gap:8px}.pill{border:1px solid #155d68;border-radius:30px;padding:7px 12px;color:#b6fff0;font-size:12px;background:#0a1c29}.pill.rate{background:#0b3450;border-color:#146b8b;color:#5defff}
+.coin{width:116px;height:116px;border-radius:28px;margin:32px auto 18px;display:grid;place-items:center;background:radial-gradient(circle,#103d48,#050b14 72%);border:1px solid #1c9e9a;box-shadow:0 0 35px #12d8e855;color:var(--mint);font-size:58px;font-weight:900;position:relative}.coin:after{content:"";position:absolute;inset:-13px;border:1px dashed #12d8e8;border-radius:50%;opacity:.65}
+.center{text-align:center}.eyebrow{color:var(--muted);font-size:13px;letter-spacing:1px}.balance{font-size:38px;font-weight:750;letter-spacing:1px;margin:3px 0}.usd{color:var(--mint);font-size:16px}.cycle{border:1px solid #1b2a40;background:#080f1c;border-radius:20px;padding:14px;margin:24px 0 16px}.cyclehead{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}.ready{color:var(--mint);font-weight:700}.progress{height:7px;background:#17283b;border-radius:20px;margin-top:12px;overflow:hidden}.progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--cyan),var(--mint));box-shadow:0 0 12px var(--cyan)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:1px solid #1c5260;border-radius:18px;padding:14px 8px;background:#101d30;color:#55e6d0;font-weight:700}.btn.primary{background:linear-gradient(100deg,#08a9e8,#1be0ad);color:#04131a;border:0;box-shadow:0 8px 25px #00c9d344}.btn:active,.nav button:active{transform:scale(.98)}
+.stats{display:flex;justify-content:space-between;align-items:center}.price{font-size:29px;font-weight:750}.positive{color:var(--mint);font-size:13px}.muted{color:var(--muted);font-size:12px;line-height:1.8;text-align:end}.chart{height:105px;margin-top:18px;border-bottom:1px solid #1a3042;position:relative;overflow:hidden}.chart svg{width:100%;height:100%}
+.section-title{font-weight:750;margin:18px 2px 12px}.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{background:#0d1728cc;border:1px solid #19394b;border-radius:17px;padding:15px}.tile span{display:block;color:var(--muted);font-size:12px}.tile b{display:block;margin-top:7px;font-size:17px}
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:4;background:#080f1df2;border:1px solid #145365;border-bottom:0;border-radius:24px 24px 0 0;padding:10px max(12px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-around;backdrop-filter:blur(18px);max-width:560px;margin:auto}.nav button{background:none;border:0;color:var(--muted);font-size:11px;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:58px}.nav .active{color:var(--cyan)}.nav .core{width:68px;height:68px;border-radius:50%;margin-top:-30px;background:radial-gradient(circle at 35% 25%,#5df4ff,#09b5d4 65%,#04758f);color:#03111a;border:5px solid #06111c;outline:1px solid #12d8e8;box-shadow:0 0 25px #12d8e877;font-size:12px;font-weight:900}.nav .core span{font-size:23px}
+.toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:#10283a;border:1px solid #1d7a83;border-radius:14px;padding:11px 16px;color:#d9fffa;font-size:12px;display:none;z-index:8;max-width:90%;text-align:center}
+[dir="ltr"] .muted{text-align:left}[dir="ltr"] .cyclehead{direction:ltr}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand"><div class="logo">S</div><div><b>SOURCE OF LIFE</b><small>COMMUNITY MINING</small></div></div>
+ <button class="lang" id="langBtn" aria-label="Change language">🇮🇷 فارسی ▾</button>
+</header>
+<main class="wrap">
+ <div class="user"><div><strong id="welcome">خوش آمدی، کاربر <span class="level">Lv1</span></strong><small id="username">@your_username</small></div><span class="pill">● <span id="online">آنلاین</span></span></div>
+ <section class="card">
+  <div class="pills"><span class="pill">● <span data-i="mining">استخراج فعال</span></span><span class="pill rate">ϟ 5.4 <span data-i="rate">واحد/ساعت</span></span></div>
+  <div class="coin">S</div>
+  <div class="center"><div class="eyebrow" data-i="unclaimed">موجودی آزمایشی</div><div class="balance">+282.0113</div><div class="usd">SOLIFE · $0.5071</div></div>
+  <div class="cycle"><div class="cyclehead"><span>◷ <span data-i="cycle">چرخه استخراج (۲۴ ساعت)</span></span><b class="ready" data-i="ready">آماده دریافت!</b></div><div class="progress"><span></span></div></div>
+  <div class="actions"><button class="btn primary" id="claim">↓ <span data-i="claim">دریافت آزمایشی</span></button><button class="btn">✓ <span data-i="active">استخراج فعال</span></button></div>
+ </section>
+ <section class="card">
+  <div class="stats"><div><div class="price">$0.00180</div><div class="positive">↗ +3.37% <span data-i="today">۲۴ ساعت</span></div></div><div class="muted">Vol&nbsp; $185.58<br>Cap&nbsp; $173.57K</div></div>
+  <div class="chart"><svg viewBox="0 0 400 110" preserveAspectRatio="none" aria-label="Decorative sample price chart"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#18d9cf" stop-opacity=".35"/><stop offset="1" stop-color="#18d9cf" stop-opacity="0"/></linearGradient></defs><path d="M0 88 L25 78 48 82 70 61 94 70 118 50 140 59 164 42 188 55 210 31 234 43 260 20 284 34 310 14 336 28 360 9 400 18 L400 110 L0 110Z" fill="url(#g)"/><path d="M0 88 L25 78 48 82 70 61 94 70 118 50 140 59 164 42 188 55 210 31 234 43 260 20 284 34 310 14 336 28 360 9 400 18" fill="none" stroke="#21dfbd" stroke-width="3"/></svg></div>
+  <div class="muted" style="text-align:start" data-i="demo">اطلاعات قیمت و موجودی صرفاً نمونه نمایشی هستند.</div>
+ </section>
+ <div class="section-title" data-i="overview">نمای کلی</div>
+ <div class="tiles"><div class="tile"><span data-i="network">وضعیت شبکه</span><b>● <span data-i="stable">پایدار</span></b></div><div class="tile"><span data-i="referrals">دعوت دوستان</span><b>0</b></div></div>
+</main>
+<nav class="nav">
+ <button><span>◎</span><span data-i="bounties">ماموریت‌ها</span></button>
+ <button><span>♧</span><span data-i="community">جامعه</span></button>
+ <button class="core active"><span>ϟ</span><span>CORE</span></button>
+ <button><span>⬡</span><span data-i="vault">خزانه</span></button>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const translations={
+ fa:{lang:"🇮🇷 فارسی ▾",welcome:"خوش آمدی، کاربر",online:"آنلاین",mining:"استخراج فعال",rate:"واحد/ساعت",unclaimed:"موجودی آزمایشی",cycle:"چرخه استخراج (۲۴ ساعت)",ready:"آماده دریافت!",claim:"دریافت آزمایشی",active:"استخراج فعال",today:"۲۴ ساعت",demo:"اطلاعات قیمت و موجودی صرفاً نمونه نمایشی هستند.",overview:"نمای کلی",network:"وضعیت شبکه",stable:"پایدار",referrals:"دعوت دوستان",bounties:"ماموریت‌ها",community:"جامعه",vault:"خزانه",toast:"این فقط یک دمو است؛ دریافت توکن واقعی فعال نیست."},
+ en:{lang:"🇬🇧 English ▾",welcome:"Welcome, user",online:"Online",mining:"Mining active",rate:"units/hour",unclaimed:"Demo balance",cycle:"Mining cycle (24h)",ready:"Ready to claim!",claim:"Demo claim",active:"Mining active",today:"24h",demo:"Price and balance values are sample data for demonstration only.",overview:"Overview",network:"Network status",stable:"Stable",referrals:"Invite friends",bounties:"Bounties",community:"Community",vault:"Vault",toast:"Demo only — real token claims are not enabled."},
+ ar:{lang:"🇸🇦 العربية ▾",welcome:"مرحباً، أيها المستخدم",online:"متصل",mining:"التعدين نشط",rate:"وحدة/ساعة",unclaimed:"رصيد تجريبي",cycle:"دورة التعدين (24 ساعة)",ready:"جاهز للمطالبة!",claim:"مطالبة تجريبية",active:"التعدين نشط",today:"24 ساعة",demo:"بيانات السعر والرصيد تجريبية للعرض فقط.",overview:"نظرة عامة",network:"حالة الشبكة",stable:"مستقرة",referrals:"دعوة الأصدقاء",bounties:"المهام",community:"المجتمع",vault:"الخزنة",toast:"هذه نسخة تجريبية فقط؛ المطالبة بالرموز الحقيقية غير مفعلة."}
+};
+let language="fa";
+function setLanguage(next){language=next;const t=translations[next];document.documentElement.lang=next;document.documentElement.dir=next==="en"?"ltr":"rtl";document.getElementById("langBtn").textContent=t.lang;document.getElementById("welcome").childNodes[0].textContent=t.welcome+" ";document.getElementById("online").textContent=t.online;document.querySelectorAll("[data-i]").forEach(el=>{const k=el.dataset.i;if(t[k])el.textContent=t[k]});}
+document.getElementById("langBtn").addEventListener("click",()=>{const order=["fa","en","ar"];setLanguage(order[(order.indexOf(language)+1)%order.length])});
+document.getElementById("claim").addEventListener("click",()=>{const toast=document.getElementById("toast");toast.textContent=translations[language].toast;toast.style.display="block";setTimeout(()=>toast.style.display="none",2600)});
+if(window.Telegram?.WebApp){Telegram.WebApp.ready();Telegram.WebApp.expand();try{Telegram.WebApp.setHeaderColor("#080e19");Telegram.WebApp.setBackgroundColor("#070c16")}catch(e){}}
+</script>
+</body></html>
